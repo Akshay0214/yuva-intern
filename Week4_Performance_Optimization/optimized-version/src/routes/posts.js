@@ -1,0 +1,3 @@
+const express=require('express'); const Post=require('../models/Post'); const router=express.Router();
+router.get('/',async(req,res,next)=>{try{const page=Math.max(parseInt(req.query.page,10)||1,1);const limit=Math.min(Math.max(parseInt(req.query.limit,10)||20,1),50);const skip=(page-1)*limit;const [posts,total]=await Promise.all([Post.find({}).select('title content author createdAt').populate('author','name email').sort({createdAt:-1}).skip(skip).limit(limit).lean(),Post.countDocuments({})]);res.json({page,limit,total,count:posts.length,data:posts});}catch(e){next(e)}});
+module.exports=router;

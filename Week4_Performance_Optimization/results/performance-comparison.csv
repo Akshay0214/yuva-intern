@@ -1,0 +1,7 @@
+metric,baseline,optimized,improvement_percent
+Average response time (ms),PENDING,PENDING,PENDING
+Median response time (ms),PENDING,PENDING,PENDING
+P95 response time (ms),PENDING,PENDING,PENDING
+Throughput (req/s),PENDING,PENDING,PENDING
+Error rate (%),PENDING,PENDING,PENDING
+Average response size (bytes),PENDING,PENDING,PENDING

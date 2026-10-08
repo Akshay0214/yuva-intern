@@ -1,0 +1,1 @@
+const {app,connectDB}=require('./app'); const PORT=process.env.PORT||3000; connectDB().then(()=>app.listen(PORT,()=>console.log(`Server running on ${PORT}`))).catch(e=>{console.error(e.message);process.exit(1)});
